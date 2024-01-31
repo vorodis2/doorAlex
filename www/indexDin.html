@@ -1,0 +1,95 @@
+<!DOCTYPE html><html><head>
+<meta charset="UTF-8">
+<title>doorAlexDin</title>
+
+<script src='src/lib/jquery-1.11.3.js'></script>
+<script src='src/lib/tween.min.js'></script>
+
+
+
+<script src='src/lib/three.min_158.js'></script>
+
+<script src='src/libMy/divLib.js'></script>
+<script src='src/libMy/divLibPlus.js'></script>
+
+
+
+
+
+
+</head>
+<meta name="viewport" content="width=device-width,height=device-height,user-scalable=no user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+
+
+<script type="module">
+
+	
+	window.trace = window.console.log.bind(window.console);	
+
+	import { Main } from './src/doorAlex/Main.js';
+
+	var main,dcmParam;
+	
+
+
+
+
+	function sizeWindow () {
+		
+		var w = document.documentElement.clientWidth;
+		var h = document.documentElement.clientHeight;
+		if(window.innerWidth!=undefined)w = window.innerWidth;
+		if(window.innerHeight!=undefined)h = window.innerHeight;
+			
+		if(main)main.sizeWindow(w,h);
+	}
+
+	function receiveMessage(event){
+		
+		if(!main)return;
+		if(!event.data)return;
+		//if(!event.data.type)return;
+		
+		main.setObjJSON(event.data.param); 
+	}
+
+	function init(t){
+	
+		
+
+
+			main=new Main( function(s,p,p1){
+				
+				if(s=="init"){
+			
+					sizeWindow()
+					
+				}
+				
+
+			});
+
+			
+
+		window.onresize = sizeWindow;
+		sizeWindow();
+	}
+
+
+	/////////////////////
+	document.addEventListener("DOMContentLoaded", function() {
+		init();//строитель		
+	});
+
+</script>	
+
+<style type="text/css">
+	#stats { position: absolute; top:0; left: 200px; }
+	@font-face {
+	  	font-family: "Open Sans";
+	  	src: url(resources/font/open-sans.ttf) format("truetype");
+	}
+
+</style>
+</body></html>
