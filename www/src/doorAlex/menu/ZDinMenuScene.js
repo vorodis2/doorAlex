@@ -80,6 +80,7 @@ export function ZDinMenuScene(par,sceneSB, fun) {
     this.object;
 
     this.setObj = function (oo) {
+        trace("======setObj============",oo)
         if(oo)this.objectXZ=oo
         var b = false;
         if(oo==null)this.objectXZ={}
@@ -123,13 +124,14 @@ export function ZDinMenuScene(par,sceneSB, fun) {
     })*/
     
     this.save=function(){
-  /*      for (var i = 0; i <  this.sceneSB.array.length; i++) {
+        for (var i = 0; i <  this.sceneSB.array.length; i++) {
             this.setParam(this.object[this.sceneSB.array[i].name], this.objectXZ.scene[this.sceneSB.array[i].name] )
         }
-        let ss=JSON.stringify(this.objectXZ)      
+   /*     let ss=JSON.stringify(this.objectXZ)      
         trace("===",this.objectXZ)
         mhbd.setParam("info", 177, "object", ss);
 */
+        trace(this.sceneSB)
         self.fun("save", this.objectXZ)
    }
 

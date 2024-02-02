@@ -59,7 +59,54 @@ export class Door {
 
 
         this.init = function() {
-            this.loader=new GLTFLoader()  
+            this.loader=new GLTFLoader() 
+            let hh=1;
+            let rr=10
+
+/*
+            let ax=new THREE.AxesHelper(20)
+            this.content3d.add(ax);*/
+
+            const geometry = new THREE.CylinderGeometry( rr, rr, hh, 67 ); 
+            const material = new THREE.MeshPhongMaterial( { color: 0xffffff } ); 
+            const circle = new THREE.Mesh( geometry, material ); 
+
+            circle.position.y =- hh/2
+            visi3D.objShadow(circle, true)
+            
+            this.par.content3d.add( circle );/**/
+
+
+           /* var group = new THREE.Object3D();
+            this.par.content3d.add( group );
+            
+            const geometry1 = new THREE.BoxGeometry(1,1,1);
+            let r=30
+            for ( let i = 0; i < 200; i ++ ) {
+
+                const object = new THREE.Mesh( geometry1, new THREE.MeshLambertMaterial( { color: Math.random() * 0xffffff } ) );
+
+                object.position.x = Math.random() * r - r/2;
+                object.position.y = Math.random() * r - r/2;
+                object.position.z = Math.random() * r - r/2;
+
+                object.rotation.x = Math.random() * 2 * Math.PI;
+                object.rotation.y = Math.random() * 2 * Math.PI;
+                object.rotation.z = Math.random() * 2 * Math.PI;
+
+                object.scale.x = Math.random() * 2 + 1;
+                object.scale.y = Math.random() * 2 + 1;
+                object.scale.z = Math.random() * 2 + 1;
+
+                object.castShadow = true;
+                object.receiveShadow = true;
+
+                
+
+                group.add( object );
+
+            }
+            visi3D.objShadow(group, true)   */ 
 
             visi3D.addEvent('down',this.down)
             visi3D.addEvent('over',this.over)
@@ -107,6 +154,7 @@ export class Door {
         this.startC3d = function() {
             visi3D.addChildMouse(this.c3d)
             this.content3d.add(this.c3d);
+            visi3D.objShadow(this.c3d, true)
             this.metods.upRect()
             self.fun("upServerModel",self.objC3d)
             visi3D.intRend=1;
@@ -143,9 +191,22 @@ export class Metods {
         this.par = par;
      
         this.upRect=function(){  
+            for (var i = 0; i < this.par.par.content3d.children.length; i++) {
+                if(this.par.par.content3d.children[i].uuid!==this.par.content3d.uuid){
+                    this.par.par.content3d.children[i].visible=false
+                }else{
+                    this.par.par.content3d.children[i].visible=true
+                }
+            }
+
+
+
             visi3D.utility.focus.targetObject=this.par.content3d;
             visi3D.render()
             visi3D.utility.focus.targetObject=null
+            for (var i = 0; i < this.par.par.content3d.children.length; i++) {                
+                this.par.par.content3d.children[i].visible=true                
+            }
         }
 
 

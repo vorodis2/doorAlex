@@ -26,6 +26,8 @@ export class Glaf {
             document.body.appendChild(this.contHTML); 
 
             var oSp = JSON.parse('{"scene":{"ambient":{"works":true,"active":true,"color":"#ffffff","intensity":0.71},"shadow":{"works":true,"active":true,"mapSize":4096,"color":"#ffffff","bias":0.001,"intensity":0.06,"radius":1,"bAlphaForCoating":false,"fixation":true,"rotationX":0.67,"rotationZ":1.89,"distance":144.99,"cubWidth":1000,"cubHeight":1000,"distanceUpdateShadow":6.26},"sky":{"works":true,"active":false,"color":"#ee295c","link":"null","radius":522},"mirror":{"works":true,"xz":"reflect","link":"date/scenes3d/2/18-maps.jpg","exposure":8.33,"gamma":9.39,"link1":"null","exposure1":-1,"gamma1":-1},"visi3D":{"works":true,"alwaysRender":false,"fov":45,"far":45000,"minZum":0,"maxZum":20000,"zume":763,"powerZum":19,"minRotationX":1.5,"maxRotationX":0,"debug":false,"isDragPan":true,"alphaAd":true,"rotationX":1,"rotationZ":-0.91,"globZ":0},"effect":{"works":true,"active":false,"edgeStrength":3,"edgeGlow":0.96,"pulsePeriod":4.11,"linkTextur":"null","visibleEdgeColor":"#ff5062","hiddenEdgeColor":"#190a05","edgeThickness":5},"fog":{"works":true,"active":false,"color":"#00ae9c","near":0,"far":2246}},"three":{"uuid":"136621be-1b7c9d69","key":null,"id":null,"name":"name37","tId":0,"b":[0,0,0],"n":[0,0,0],"s":[0,0,0],"array":[]}}');
+            
+            var oSp = JSON.parse('{"scene":{"ambient":{"works":true,"active":true,"color":"#ffffff","intensity":2.16},"shadow":{"works":true,"active":true,"mapSize":4096,"color":"#ffffff","bias":0.001,"intensity":0.87,"radius":1,"bAlphaForCoating":false,"fixation":false,"rotationX":-0.73,"rotationZ":-2.49,"distance":0,"cubWidth":10,"cubHeight":10,"distanceUpdateShadow":6.26},"sky":{"works":true,"active":false,"color":"#ee295c","link":"null","radius":522},"mirror":{"works":true,"xz":"reflect","link":"date/scenes3d/2/18-maps.jpg","exposure":8.33,"gamma":9.39,"link1":"null","exposure1":-1,"gamma1":-1},"visi3D":{"works":true,"alwaysRender":false,"fov":45,"far":45000,"minZum":10,"maxZum":50,"zume":763,"powerZum":19,"minRotationX":1.5,"maxRotationX":0,"debug":false,"isDragPan":true,"alphaAd":true,"rotationX":1,"rotationZ":-0.91,"globZ":0},"effect":{"works":true,"active":false,"edgeStrength":3,"edgeGlow":0.96,"pulsePeriod":4.11,"linkTextur":"null","visibleEdgeColor":"#ff5062","hiddenEdgeColor":"#190a05","edgeThickness":5},"fog":{"works":true,"active":false,"color":"#00ae9c","near":0,"far":2246}},"three":{"uuid":"136621be-1b7c9d69","key":null,"id":null,"name":"name37","tId":0,"b":[0,0,0],"n":[0,0,0],"s":[0,0,0],"array":[]}}')
             this.oSp=oSp
             var alpha = oSp.scene.visi3D.alphaAd
             alpha = false;
@@ -50,6 +52,7 @@ export class Glaf {
                 }
                 this.sceneSB.array[i].setBasa(oSp.scene[this.sceneSB.array[i].name]);
             }
+
             visi3D.utility.debug=false; 
             visi3D.zume=5
 

@@ -30,8 +30,8 @@ export class Menu {
         this.param.fontSizeLitte=12;
         this.param.otstup=15
         this.param.borderRadius=4
-        this.param.color= "#f5828e"//'#FF0000'//оновная поалитра 
-        this.param.color1="#202c31"//'#00FF00'//оновная поалитра 
+        this.param.color= "#05828e"//'#FF0000'//оновная поалитра 
+        this.param.color1='#f0f0f0'//"#202c31"//оновная поалитра 
         this.param.colorActive="#bdbdbd"//'#0000FF'//
         this.param.fontFamily = 'Open Sans'//'Roboto Mono Thin'//"Montserrat"//"PT Mono";           
         this.param.sizeBase=(this.param.wh1+this.param.otstup)*3+this.param.otstup*2

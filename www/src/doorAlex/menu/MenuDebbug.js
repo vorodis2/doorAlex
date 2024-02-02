@@ -16,10 +16,21 @@ export class MenuDebbug  {
             window.dDebug = this.dDebug = new DDebug(this.dCont,0,0,"doorAlex_2",this.param);
             let dCont=dDebug.getDDcont()
 
-
+            this.ta=new DTextArea(dCont, 600)
+            this.ta.fontSize=8
+            this.ta.width=333
+            this.ta.textAlign='left'
 
             this.zDinMenuScene=new ZDinMenuScene(this, glafBig.sceneSB,function(s,p,p1){
-              
+                
+                trace("===",s,p,p1)
+                
+                if(s=='save'){
+                    trace("=====",p.scene.ambient)
+                    let sa=JSON.stringify(p)
+                    self.ta.text=sa;
+                }
+                
             })
             dCont.add(this.zDinMenuScene.dCont)
 
