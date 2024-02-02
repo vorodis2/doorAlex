@@ -28,9 +28,9 @@ export class Menu {
         this.param.wh2=20;  
         this.param.fontSize=16;
         this.param.fontSizeLitte=12;
-        this.param.otstup=5
+        this.param.otstup=15
         this.param.borderRadius=4
-        this.param.color= "#05828e"//'#FF0000'//оновная поалитра 
+        this.param.color= "#f5828e"//'#FF0000'//оновная поалитра 
         this.param.color1="#202c31"//'#00FF00'//оновная поалитра 
         this.param.colorActive="#bdbdbd"//'#0000FF'//
         this.param.fontFamily = 'Open Sans'//'Roboto Mono Thin'//"Montserrat"//"PT Mono";           
@@ -52,12 +52,12 @@ export class Menu {
                 fun(s,p,p1);
             })
 
-           /* if(window.DDebug!=undefined){//подключена либа, дебаг
+            if(window.DDebug!=undefined){//подключена либа, дебаг
                 this.array[this.array.length] = this.menuDebbug = new MenuDebbug(this, function(s,p,p1){
                     fun(s,p,p1);
                 })
 
-            }*/
+            }
 
         }
 

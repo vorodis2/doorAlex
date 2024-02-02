@@ -11,7 +11,10 @@ export class Glaf {
         var self = this;
         this.par = par;
         window.glafBig=this
-        
+       
+
+
+        window.dcmParam = new DCM();
 
         this.init=function(){
 
@@ -26,7 +29,7 @@ export class Glaf {
             this.oSp=oSp
             var alpha = oSp.scene.visi3D.alphaAd
             alpha = false;
-            var mobile = false;
+            var mobile = dcmParam.mobile;
 
             //порезаный от пикси вювер        
             this.visi3D = new MVisi3D(this.contHTML, null, mobile, true, true, true, alpha);

@@ -18,13 +18,13 @@ export class MenuDebbug  {
 
 
 
-           /* this.zDinMenuScene=new ZDinMenuScene(this, glafBig.sceneSB,function(s,p,p1){
+            this.zDinMenuScene=new ZDinMenuScene(this, glafBig.sceneSB,function(s,p,p1){
               
             })
             dCont.add(this.zDinMenuScene.dCont)
 
             this.zDinMenuScene.setObj(glafBig.oSp);
-            this.zDinMenuScene.active=true*/
+            this.zDinMenuScene.active=true/**/
             
 
         }

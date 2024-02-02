@@ -14,6 +14,9 @@ export class Door {
         this.metods=new Metods(this)
 
 
+
+
+
         this.content3d = new THREE.Object3D();
         this.par.content3d.add(this.content3d);
 
